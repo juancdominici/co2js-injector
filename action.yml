@@ -1,0 +1,21 @@
+name: 'Measure CO2 Emissions'
+description: 'Measure CO2 emissions of your code using CO2.js'
+inputs:
+  path:
+    description: 'Path to the directory or file to measure'
+    required: false
+    default: '.'
+  green-hosting:
+    description: 'Is the hosting green?'
+    required: false
+    default: 'false'
+  destination:
+    description: 'Directory to write carbon.txt to'
+    required: false
+    default: '.'
+outputs:
+  emissions:
+    description: 'Estimated CO2 emissions in grams'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

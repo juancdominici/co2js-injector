@@ -1,0 +1,20 @@
+name: Test CO2 Action
+
+on: [push, pull_request]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Measure CO2 of this repo
+        id: measure
+        uses: ./
+        with:
+          path: '.'
+          green-hosting: 'true'
+          destination: './public'
+          
+      - name: Print Output
+        run: echo "Estimated Emissions: ${{ steps.measure.outputs.emissions }}g"
