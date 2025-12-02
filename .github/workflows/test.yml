@@ -17,4 +17,5 @@ jobs:
           destination: './public'
           
       - name: Print Output
-        run: echo "Estimated Emissions: ${{ steps.measure.outputs.emissions }}g"
+        run: |
+          echo "Estimated Emissions: ${{ steps.measure.outputs.emissions }}g"
