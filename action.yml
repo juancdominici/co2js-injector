@@ -13,6 +13,22 @@ inputs:
     description: 'Directory to write carbon.txt to'
     required: false
     default: '.'
+  cloudflare-enabled:
+    description: 'Enable Cloudflare analytics integration'
+    required: false
+    default: 'false'
+  cloudflare-api-token:
+    description: 'Cloudflare API token with Analytics read permissions'
+    required: false
+  cloudflare-zone-id:
+    description: 'Cloudflare Zone ID to query analytics for'
+    required: false
+  cloudflare-since:
+    description: 'Start date (YYYY-MM-DD) for Cloudflare analytics window'
+    required: false
+  cloudflare-until:
+    description: 'End date (YYYY-MM-DD) for Cloudflare analytics window'
+    required: false
 outputs:
   emissions:
     description: 'Estimated CO2 emissions in grams'
