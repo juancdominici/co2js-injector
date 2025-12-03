@@ -1,18 +1,23 @@
 {
-  "name": "co2js-injector",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ncc build src/index.ts -o dist"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@tgwf/co2": "^0.17.0",
-    "glob": "^13.0.0"
-  }
+    "name": "co2js-injector",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npx @vercel/ncc build src/index.ts -o dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@actions/core": "^1.11.1",
+        "@tgwf/co2": "^0.17.0",
+        "glob": "^13.0.0"
+    },
+    "devDependencies": {
+        "@vercel/ncc": "0.38.4",
+        "typescript": "^5.6.0",
+        "@types/node": "^20.0.0"
+    }
 }
