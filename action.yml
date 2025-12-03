@@ -10,7 +10,7 @@ inputs:
     required: false
     default: 'false'
   destination:
-    description: 'Directory to write carbon.txt to'
+    description: 'Directory to write report.txt to'
     required: false
     default: '.'
   cloudflare-enabled:

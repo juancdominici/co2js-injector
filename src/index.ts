@@ -81,9 +81,9 @@ async function run(): Promise<void> {
 			fs.mkdirSync(destination, { recursive: true });
 		}
 
-		const reportPath = path.join(destination, "carbon.txt");
+		const reportPath = path.join(destination, "report.txt");
 		fs.writeFileSync(reportPath, carbonTxt);
-		console.log(`Created carbon.txt at ${reportPath}`);
+		console.log(`Created report.txt at ${reportPath}`);
 	} catch (error) {
 		if (error instanceof Error) core.setFailed(error.message);
 	}
