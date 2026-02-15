@@ -4,7 +4,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { glob } from "glob";
 
-type CloudflareAnalyticsResult = {
+export type CloudflareAnalyticsResult = {
 	zone_id: string;
 	time_range: {
 		since: string;
@@ -89,7 +89,7 @@ async function run(): Promise<void> {
 	}
 }
 
-async function calculateBytes(targetPath: string): Promise<number> {
+export async function calculateBytes(targetPath: string): Promise<number> {
 	let totalBytes = 0;
 
 	// Check if path exists
@@ -242,7 +242,7 @@ async function fetchCloudflareAnalytics(
 	}
 }
 
-function buildCarbonTxt(params: {
+export function buildCarbonTxt(params: {
 	bytes: number;
 	greenHosting: boolean;
 	estimatedCO2: number;
@@ -303,4 +303,6 @@ function buildCarbonTxt(params: {
 	return lines.join("\n");
 }
 
-run();
+if (require.main === module) {
+	run();
+}

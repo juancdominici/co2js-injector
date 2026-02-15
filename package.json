@@ -3,21 +3,25 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "npx @vercel/ncc build src/index.ts -o dist"
+        "test": "npm exec -- tsc -p tsconfig.test.json && uvu dist-test",
+        "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
+    "overrides": {
+        "undici": ">=6.23.0"
+    },
     "dependencies": {
         "@actions/core": "^1.11.1",
         "@tgwf/co2": "^0.17.0",
         "glob": "^13.0.0"
     },
     "devDependencies": {
-        "@vercel/ncc": "0.38.4",
+        "@types/node": "^20.0.0",
+        "esbuild": "^0.27.3",
         "typescript": "^5.6.0",
-        "@types/node": "^20.0.0"
+        "uvu": "^0.5.6"
     }
 }
